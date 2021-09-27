@@ -2,15 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
-    --text: #F5FBEF;
-    --background: #030027;
-    --brink-pink: #E85D75;
-    --gray-line: #dcdde0;
-    --purple: #9D69A3;
-    --gray: #61707D;
+    --text: #F7FFF7;
+    --background: #023047;
+    --red: #FF6B6B;
+    --orange: #FFA96C;
+    --turquoise: #4ECDC4;
+    --gray: #1A535C;
     --green: #40F99B;
-    --blue-dark: #4953b8;
-    --blue-twitter: #2aa9e0;
+    --yellow: #FFE66D;
   }
 
   * {
