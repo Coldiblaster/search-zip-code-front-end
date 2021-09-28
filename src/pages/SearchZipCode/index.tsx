@@ -7,7 +7,7 @@ import { api } from '../../services/api';
 
 import ImageBackground from '../../assets/background.svg';
 
-import { Container, Content, FormContent, TableContent, Table } from './styles';
+import { Container, Content, FormContent, Table } from './styles';
 
 interface Address {
   cep: string;
@@ -77,31 +77,29 @@ export default function SearchZipCode() {
           </form>
         </FormContent>
         {address && (
-          <TableContent>
-            <Table>
-              <thead>
-                <tr>
-                  <th>Cep</th>
-                  <th>Logradouro</th>
-                  <th>Bairro</th>
-                  <th>Localidade/UF</th>
-                  <th>Complemento</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>{address?.cep}</td>
-                  <td>{address?.logradouro}</td>
-                  <td>{address?.bairro}</td>
-                  <td>
-                    {address?.localidade}
-                    {address?.uf ? `/${address.uf}` : ''}
-                  </td>
-                  <td>{address?.complemento}</td>
-                </tr>
-              </tbody>
-            </Table>
-          </TableContent>
+          <Table>
+            <thead>
+              <tr>
+                <th>Cep</th>
+                <th>Logradouro</th>
+                <th>Bairro</th>
+                <th>Localidade/UF</th>
+                <th>Complemento</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Cep">{address?.cep}</td>
+                <td data-label="Logradouro">{address?.logradouro}</td>
+                <td data-label="Bairro">{address?.bairro}</td>
+                <td data-label="Localidade">
+                  {address?.localidade}
+                  {address?.uf ? `/${address.uf}` : ''}
+                </td>
+                <td data-label="Complemento">{address?.complemento}</td>
+              </tr>
+            </tbody>
+          </Table>
         )}
       </Content>
     </Container>
