@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-
   padding: 48px;
 `;
 
@@ -13,15 +12,38 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
 
-  form {
-    margin: 80px 0;
+  gap: 4rem;
+`;
+
+export const FormContent = styled.section`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  img {
     width: 100%;
-    padding: 8px;
+    height: 100%;
+
+    max-width: 320px;
+  }
+
+  form {
+    width: 20rem;
     text-align: center;
+
+    @media (max-width: 468px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
   }
 `;
 
-export const Teste = styled.div`
+export const TableContent = styled.div`
   width: 100%;
   overflow-x: auto;
 `;
@@ -29,16 +51,16 @@ export const Teste = styled.div`
 export const Table = styled.table`
   width: 100%;
 
-  background: var(--turquoise);
-  color: var(--background);
+  color: var(--white);
 
   border-collapse: collapse;
-  border-radius: 8px;
+  border-radius: 10px;
+
   overflow: hidden;
   width: 100%;
 
   thead {
-    background: var(--turquoise);
+    background: var(--blue);
     height: 32px;
   }
 
@@ -46,6 +68,8 @@ export const Table = styled.table`
     background: var(--text);
     height: 24px;
     overflow-y: scroll;
+
+    color: var(--darkBlue);
   }
 
   th,
@@ -55,6 +79,6 @@ export const Table = styled.table`
   }
 
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--white);
   }
 `;
