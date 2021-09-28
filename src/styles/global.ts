@@ -2,14 +2,15 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
-    --text: #F7FFF7;
-    --background: #023047;
+    --text: #EDFBFF;
+    --background: #00596F;
     --red: #FF6B6B;
-    --orange: #FFA96C;
-    --turquoise: #4ECDC4;
-    --gray: #1A535C;
-    --green: #40F99B;
-    --yellow: #FFE66D;
+    --orange: #E79B25;
+    --gray: #9DADBC;
+    --green: #6DEBB5;
+    --white: #EDFBFF;
+    --darkBlue: #193F58;
+    --blue: #00A5E4;
   }
 
   * {
@@ -28,9 +29,9 @@ export default createGlobalStyle`
       font-size: 87.5%;
     }
 
-    @media (max-width: 480px) {
+    /* @media (max-width: 480px) {
       font-size: 75%;
-    }
+    } */
   }
 
   body{

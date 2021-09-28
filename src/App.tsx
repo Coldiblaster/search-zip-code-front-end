@@ -1,5 +1,8 @@
+import { ToastContainer } from 'react-toastify';
 import { Header } from './components/Header';
 import SearchZipCode from './pages/SearchZipCode';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import GlobalStyle from './styles/global';
 
@@ -8,6 +11,7 @@ function App() {
     <>
       <Header />
       <SearchZipCode />
+      <ToastContainer limit={3} autoClose={5000} />
       <GlobalStyle />
     </>
   );

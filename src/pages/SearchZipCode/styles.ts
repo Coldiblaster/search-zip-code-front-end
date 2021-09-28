@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   height: 100%;
-
   padding: 48px;
 `;
 
@@ -13,39 +12,59 @@ export const Content = styled.div`
   align-items: center;
   flex-direction: column;
 
-  form {
-    margin: 80px 0;
-    width: 100%;
-    padding: 8px;
-    text-align: center;
-  }
+  gap: 4rem;
 `;
 
-export const Teste = styled.div`
+export const FormContent = styled.section`
   width: 100%;
-  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+
+    max-width: 320px;
+  }
+
+  form {
+    width: 20rem;
+    text-align: center;
+
+    @media (max-width: 468px) {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const Table = styled.table`
   width: 100%;
 
-  background: var(--turquoise);
-  color: var(--background);
+  color: var(--white);
 
   border-collapse: collapse;
-  border-radius: 8px;
+  border-radius: 10px;
+
   overflow: hidden;
   width: 100%;
 
   thead {
-    background: var(--turquoise);
+    background: var(--blue);
     height: 32px;
+    text-transform: uppercase;
   }
 
   tbody {
     background: var(--text);
     height: 24px;
-    overflow-y: scroll;
+
+    color: var(--darkBlue);
   }
 
   th,
@@ -55,6 +74,44 @@ export const Table = styled.table`
   }
 
   tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: var(--white);
+  }
+
+  @media screen and (max-width: 600px) {
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      display: block;
+      padding: 2px;
+      margin-bottom: 0.625em;
+    }
+
+    td {
+      border-bottom: 1px solid var(--gray);
+
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
   }
 `;
