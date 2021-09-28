@@ -43,11 +43,6 @@ export const FormContent = styled.section`
   }
 `;
 
-export const TableContent = styled.div`
-  width: 100%;
-  overflow-x: auto;
-`;
-
 export const Table = styled.table`
   width: 100%;
 
@@ -62,12 +57,12 @@ export const Table = styled.table`
   thead {
     background: var(--blue);
     height: 32px;
+    text-transform: uppercase;
   }
 
   tbody {
     background: var(--text);
     height: 24px;
-    overflow-y: scroll;
 
     color: var(--darkBlue);
   }
@@ -80,5 +75,43 @@ export const Table = styled.table`
 
   tr:nth-child(even) {
     background-color: var(--white);
+  }
+
+  @media screen and (max-width: 600px) {
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      display: block;
+      padding: 2px;
+      margin-bottom: 0.625em;
+    }
+
+    td {
+      border-bottom: 1px solid var(--gray);
+
+      display: block;
+      font-size: 0.8em;
+      text-align: right;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
   }
 `;
