@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background: var(--red);
+  background: var(--darkBlue);
   color: var(--text);
 
   height: 96px;
@@ -10,4 +10,11 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  gap: 1rem;
+
+  img {
+    width: 6rem;
+    height: 6rem;
+  }
 `;
